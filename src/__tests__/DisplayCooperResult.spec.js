@@ -26,7 +26,7 @@ describe("<DisplayCooperResult />", () => {
     describe("evaluates the correct result for female/average", () => {
         beforeAll(() => {
             describedComponent = shallow(
-                <DisplayCooperResult distance="2000" gender="female" age="23" />
+                <DisplayCooperResult distance="1000" gender="female" age="23" />
             );
         });
     
@@ -36,7 +36,7 @@ describe("<DisplayCooperResult />", () => {
     
         it("and returns the data user put in", () => {
             expect(describedComponent.find("p#cooper-message").text()).toEqual(
-                "23 y/o female running 2000 meters."
+                "23 y/o female running 1000 meters."
             );
         });
     })
