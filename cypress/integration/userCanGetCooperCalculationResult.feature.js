@@ -5,7 +5,7 @@ describe('Cooper client calculates successfully', () => {
         cy.get('select#gender').select('female');
         cy.get('input#age').type('23');
         cy.get('p#cooper-message').should(
-            'contains',
+            'contain',
             '23 y/o female running 1000 meters.'
         );
         cy.get('p#cooper-result').should('contain', 'Result: Poor')
