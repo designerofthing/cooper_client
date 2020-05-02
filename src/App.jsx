@@ -4,6 +4,8 @@ import DisplayPerformanceData from './components/DisplayPerformanceData';
 import InputFields from './components/InputFields';
 import LoginForm from './components/LoginForm';
 import { authenticate } from "./modules/auth";
+import { Button, Segment, Container, DropdownMenu, DropdownItem, Dropdown} from 'semantic-ui-react';
+import './index.css';
 
 export default class App extends Component {
   state = {
@@ -45,12 +47,12 @@ export default class App extends Component {
       case !renderLoginForm && !authenticated:
           renderLogin = (
             <>
-              <button
+              <Button
                 id="login"
                 onClick={() => this.setState({ renderLoginForm: true})}
               >
                 Login
-              </button>
+              </Button>
               <p id='message'>{message}</p>
             </>
           );
@@ -60,7 +62,7 @@ export default class App extends Component {
           <p id='message'>Hi {JSON.parse(sessionStorage.getItem("credentials")).uid}</p>
         );
         performanceDataIndex = (
-          <button id="show-index" onClick={() => this.setState({ renderIndex: true })}>Show past entries</button>
+          <Button id="show-index" onClick={() => this.setState({ renderIndex: true })}>Show past entries</Button>
         )
         if (this.state.renderIndex) {
           performanceDataIndex = (
@@ -69,21 +71,35 @@ export default class App extends Component {
                 updateIndex={this.state.updateIndex}
                 indexUpdated={() => this.setState({ updateIndex: false })}
               />
-              <button onClick={() => this.setState({ renderIndex: false })}>Hide past entries</button>
+              <Button onClick={() => this.setState({ renderIndex: false })}>Hide past entries</Button>
             </>
           )
         } else {
           performanceDataIndex = (
-            <button id="show-index" onClick={() => this.setState({ renderIndex: true })}>Show past entries</button>
+            <Button id="show-index" onClick={() => this.setState({ renderIndex: true })}>Show past entries</Button>
           )
         }
     }
 
     return (
       <>
-        <InputFields onChangeHandler={this.onChangeHandler} />
+      <Container style={{ 
+        height: '100%', 
+        width: '100%', 
+        padding: '100px', 
+        backgroundImage: 'url(/images/cooperbkground.jpg)', 
+        backgroundRepeat: 'no-repeat', 
+        backgroundSize: '100%', 
+        textAlign: 'center', 
+        color: '#565d47'
+        }}>
+          <h1>
+            Cooper Fitness Test
+          </h1>   
+      
+        <InputFields  onChangeHandler={this.onChangeHandler} />
         {renderLogin}
-        <DisplayCooperResult
+        <DisplayCooperResult 
           distance={this.state.distance}
           gender={this.state.gender}
           age={this.state.age}
@@ -92,7 +108,10 @@ export default class App extends Component {
           entryHandler={() => this.setState({ entrySaved: true, updateIndex: true })}
         />
         {performanceDataIndex}
-      </>
+     
+  
+      </Container>
+      </> 
     );
   } 
 };
