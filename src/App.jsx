@@ -22,6 +22,11 @@ export default class App extends Component {
   onChangeHandler = e => {
     this.setState({ [e.target.name] : e.target.value, entrySaved: false })
   };
+  handleDropdown = (e, {name, value}) => {
+    this.setState({ 
+      [name]: value
+    });
+  };
 
   onLogin = async e => {
     e.preventDefault();
@@ -97,7 +102,7 @@ export default class App extends Component {
             Cooper Fitness Test
           </h1>   
       
-        <InputFields  onChangeHandler={this.onChangeHandler} />
+        <InputFields  onChangeHandler={this.onChangeHandler} handleDropdown={this.handleDropdown}/>
         {renderLogin}
         <DisplayCooperResult 
           distance={this.state.distance}

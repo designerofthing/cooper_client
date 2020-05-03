@@ -1,7 +1,7 @@
 import React from 'react';
-import { Label, Select, Input, Dropdown, DropdownItem, DropdownMenu } from 'semantic-ui-react'; 
+import { Label, Input, Form, Dropdown, DropdownItem, DropdownMenu } from 'semantic-ui-react'; 
 
-const InputFields = ({ onChangeHandler }) => {
+const InputFields = ({ onChangeHandler, handleDropdown }) => {
     return (
         <>
         <Label style={{ padding: '12px', marginRight: '10px', color: '#565d47'}}>Distance</Label>
@@ -11,12 +11,22 @@ const InputFields = ({ onChangeHandler }) => {
           id="distance"  
         ></Input>
   
-        <Dropdown text='Gender' style={{ color: '#565d47', marginRight: '15px'}} onChange={onChangeHandler} name="gender" id="gender">
-          <DropdownMenu>
-          <DropdownItem value="female">Female</DropdownItem>
-          <DropdownItem value="male">Male</DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
+        <Form.Select 
+          options={[
+                    { key: 'female', text: 'Female', value:"female" },
+                    { key: 'male', text: 'Male', value:"male" }
+                  ]}
+          placeholder='Gender' 
+          style={{ 
+                  color: '#565d47', 
+                  marginRight: '15px',
+                  width: '40px'
+                }} 
+                onChange={handleDropdown}                        
+                name="gender" 
+                id="gender"
+                />
+       
   
         <Label style={{ padding: '12px', margin: '10px' }} >Age</Label>
         <Input style={{ padding: '14px', marginRight: '10px' }}

@@ -2,7 +2,8 @@ describe('Cooper client calculates successfully', () => {
     it('calculates cooper performance', () => {
         cy.visit('/');
         cy.get('input#distance').type("1000");
-        cy.get('select#gender').select('female');
+        cy.get('div#gender.ui.selection.dropdown').click();
+        cy.contains('female').click();
         cy.get('input#age').type('23');
         cy.get('p#cooper-message').should(
             'contain',
@@ -10,4 +11,4 @@ describe('Cooper client calculates successfully', () => {
         );
         cy.get('p#cooper-result').should('contain', 'Result: Poor')
     });
-  });
+  });   
