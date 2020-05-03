@@ -1,0 +1,6 @@
+body {
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-image: url('/public/images/cooperbkground.jpg')!important;
+}
