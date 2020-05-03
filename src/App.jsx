@@ -7,6 +7,7 @@ import { authenticate } from "./modules/auth";
 import { Button, Container } from 'semantic-ui-react';
 import './App.css';
 import './modules/BackgroundImage.module.css';
+import { Bar } from 'react-chartjs-2';
 
 export default class App extends Component {
   state = {
@@ -84,6 +85,7 @@ export default class App extends Component {
           )
         }
     }
+    
 
     return (
       <>
@@ -112,7 +114,21 @@ export default class App extends Component {
           entryHandler={() => this.setState({ entrySaved: true, updateIndex: true })}
         />
         {performanceDataIndex}
-     
+        <Bar
+                  labels={[3000, 4000, 4000, 4000, 5000, 3000]}
+                  data={[4, 5, 5, 5]}
+                  options={{
+                  title:{
+                      display:true,
+                      text:'Cooper Test Results',
+                      fontSize:20
+                    },
+                  legend:{
+                    display:true,
+                    position:'right'
+                  }
+                }}
+              />
   
       </Container>
       </> 

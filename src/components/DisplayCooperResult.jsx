@@ -1,7 +1,7 @@
 import React from "react";
 import cooperCalculator from "../modules/cooperCalculator";
 import { saveData } from "../modules/performanceData";
-import { Button, Form, Input, Dropdown, Menu } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 
 
 const DisplayCooperResult = ({

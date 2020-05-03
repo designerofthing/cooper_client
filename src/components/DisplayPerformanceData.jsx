@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { getData } from "../modules/performanceData";
-import { Bar } from 'react-chartjs-2';
+
+
 
 class DisplayPerformanceData extends Component {
     state = {
@@ -36,23 +37,11 @@ class DisplayPerformanceData extends Component {
                 </div>
             )
         }
+        
 
         return (
             <div>
-                <Bar
-                  data={dataIndex}
-                  options={{
-                    title:{
-                      display:true,
-                      text:'Cooper Test Results',
-                      fontSize:20
-                    },
-                    legend:{
-                      display:true,
-                      position:'right'
-                    }
-                  }}
-                />
+                {dataIndex}
             </div>
         )
     }

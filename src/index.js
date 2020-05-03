@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import axios from 'axios';
 import 'semantic-ui-css/semantic.min.css';
 
-axios.defaults.baseURL = "https://cooperapisw.herokuapp.com/";
+axios.defaults.baseURL = "https://cooperapisw.herokuapp.com/app/controllers/api/v1";
 
 ReactDOM.render(
   <React.StrictMode>
