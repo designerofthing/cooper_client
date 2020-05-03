@@ -1,5 +1,5 @@
 import React from 'react';
-import { Label, Input, Form, Dropdown, DropdownItem, DropdownMenu } from 'semantic-ui-react'; 
+import { Label, Input, Form } from 'semantic-ui-react'; 
 
 const InputFields = ({ onChangeHandler, handleDropdown }) => {
     return (

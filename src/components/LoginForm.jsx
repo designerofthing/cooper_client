@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form, Input, Label, Dropdown, Menu  } from 'semantic-ui-react';
+import { Button, Form, Input, Label } from 'semantic-ui-react';
 
 const LoginForm = ({ submitFormHandler }) => {
   return (

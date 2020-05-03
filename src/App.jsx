@@ -4,8 +4,9 @@ import DisplayPerformanceData from './components/DisplayPerformanceData';
 import InputFields from './components/InputFields';
 import LoginForm from './components/LoginForm';
 import { authenticate } from "./modules/auth";
-import { Button, Segment, Container, DropdownMenu, DropdownItem, Dropdown} from 'semantic-ui-react';
-import './index.css';
+import { Button, Container } from 'semantic-ui-react';
+import './App.css';
+import './modules/BackgroundImage.module.css';
 
 export default class App extends Component {
   state = {
@@ -22,10 +23,8 @@ export default class App extends Component {
   onChangeHandler = e => {
     this.setState({ [e.target.name] : e.target.value, entrySaved: false })
   };
-  handleDropdown = (e, {name, value}) => {
-    this.setState({ 
-      [name]: value
-    });
+  handleDropdown = ({name, value}) => {
+    this.setState({ [name]: value });
   };
 
   onLogin = async e => {
